@@ -1,0 +1,494 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A53B51702137ECF100DE670E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53B516F2137ECF100DE670E /* AppDelegate.swift */; };
+		A53B51722137ECF100DE670E /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53B51712137ECF100DE670E /* FirstViewController.swift */; };
+		A53B51742137ECF100DE670E /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53B51732137ECF100DE670E /* SecondViewController.swift */; };
+		A53B51772137ECF100DE670E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A53B51752137ECF100DE670E /* Main.storyboard */; };
+		A53B51792137ECF500DE670E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A53B51782137ECF500DE670E /* Assets.xcassets */; };
+		A53B517C2137ECF500DE670E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A53B517A2137ECF500DE670E /* LaunchScreen.storyboard */; };
+		A53B51872137ECF500DE670E /* SmartContactUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53B51862137ECF500DE670E /* SmartContactUITests.swift */; };
+		A53B51932137F39200DE670E /* DetailContactVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53B51922137F39200DE670E /* DetailContactVC.swift */; };
+		A53B51972137F3EE00DE670E /* StretchHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53B51952137F3EE00DE670E /* StretchHeader.swift */; };
+		A53B51982137F3EE00DE670E /* StretchHeaderOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53B51962137F3EE00DE670E /* StretchHeaderOptions.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A53B51832137ECF500DE670E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A53B51642137ECF100DE670E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A53B516B2137ECF100DE670E;
+			remoteInfo = SmartContact;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A53B516C2137ECF100DE670E /* SmartContact.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartContact.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A53B516F2137ECF100DE670E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A53B51712137ECF100DE670E /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		A53B51732137ECF100DE670E /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		A53B51762137ECF100DE670E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A53B51782137ECF500DE670E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A53B517B2137ECF500DE670E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A53B517D2137ECF500DE670E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A53B51822137ECF500DE670E /* SmartContactUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmartContactUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A53B51862137ECF500DE670E /* SmartContactUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartContactUITests.swift; sourceTree = "<group>"; };
+		A53B51882137ECF500DE670E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A53B51922137F39200DE670E /* DetailContactVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailContactVC.swift; sourceTree = "<group>"; };
+		A53B51952137F3EE00DE670E /* StretchHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StretchHeader.swift; sourceTree = "<group>"; };
+		A53B51962137F3EE00DE670E /* StretchHeaderOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StretchHeaderOptions.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A53B51692137ECF100DE670E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A53B517F2137ECF500DE670E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A53B51632137ECF100DE670E = {
+			isa = PBXGroup;
+			children = (
+				A53B516E2137ECF100DE670E /* SmartContact */,
+				A53B51852137ECF500DE670E /* SmartContactUITests */,
+				A53B516D2137ECF100DE670E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A53B516D2137ECF100DE670E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A53B516C2137ECF100DE670E /* SmartContact.app */,
+				A53B51822137ECF500DE670E /* SmartContactUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A53B516E2137ECF100DE670E /* SmartContact */ = {
+			isa = PBXGroup;
+			children = (
+				A53B51942137F3EE00DE670E /* StretchHeader */,
+				A53B51912137F37D00DE670E /* ViewController */,
+				A53B516F2137ECF100DE670E /* AppDelegate.swift */,
+				A53B51712137ECF100DE670E /* FirstViewController.swift */,
+				A53B51732137ECF100DE670E /* SecondViewController.swift */,
+				A53B51752137ECF100DE670E /* Main.storyboard */,
+				A53B51782137ECF500DE670E /* Assets.xcassets */,
+				A53B517A2137ECF500DE670E /* LaunchScreen.storyboard */,
+				A53B517D2137ECF500DE670E /* Info.plist */,
+			);
+			path = SmartContact;
+			sourceTree = "<group>";
+		};
+		A53B51852137ECF500DE670E /* SmartContactUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A53B51862137ECF500DE670E /* SmartContactUITests.swift */,
+				A53B51882137ECF500DE670E /* Info.plist */,
+			);
+			path = SmartContactUITests;
+			sourceTree = "<group>";
+		};
+		A53B51912137F37D00DE670E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A53B51922137F39200DE670E /* DetailContactVC.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		A53B51942137F3EE00DE670E /* StretchHeader */ = {
+			isa = PBXGroup;
+			children = (
+				A53B51952137F3EE00DE670E /* StretchHeader.swift */,
+				A53B51962137F3EE00DE670E /* StretchHeaderOptions.swift */,
+			);
+			path = StretchHeader;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A53B516B2137ECF100DE670E /* SmartContact */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A53B518B2137ECF500DE670E /* Build configuration list for PBXNativeTarget "SmartContact" */;
+			buildPhases = (
+				A53B51682137ECF100DE670E /* Sources */,
+				A53B51692137ECF100DE670E /* Frameworks */,
+				A53B516A2137ECF100DE670E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SmartContact;
+			productName = SmartContact;
+			productReference = A53B516C2137ECF100DE670E /* SmartContact.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A53B51812137ECF500DE670E /* SmartContactUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A53B518E2137ECF500DE670E /* Build configuration list for PBXNativeTarget "SmartContactUITests" */;
+			buildPhases = (
+				A53B517E2137ECF500DE670E /* Sources */,
+				A53B517F2137ECF500DE670E /* Frameworks */,
+				A53B51802137ECF500DE670E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A53B51842137ECF500DE670E /* PBXTargetDependency */,
+			);
+			name = SmartContactUITests;
+			productName = SmartContactUITests;
+			productReference = A53B51822137ECF500DE670E /* SmartContactUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A53B51642137ECF100DE670E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = "Thanh Tran Van";
+				TargetAttributes = {
+					A53B516B2137ECF100DE670E = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					A53B51812137ECF500DE670E = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = A53B516B2137ECF100DE670E;
+					};
+				};
+			};
+			buildConfigurationList = A53B51672137ECF100DE670E /* Build configuration list for PBXProject "SmartContact" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A53B51632137ECF100DE670E;
+			productRefGroup = A53B516D2137ECF100DE670E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A53B516B2137ECF100DE670E /* SmartContact */,
+				A53B51812137ECF500DE670E /* SmartContactUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A53B516A2137ECF100DE670E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A53B517C2137ECF500DE670E /* LaunchScreen.storyboard in Resources */,
+				A53B51792137ECF500DE670E /* Assets.xcassets in Resources */,
+				A53B51772137ECF100DE670E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A53B51802137ECF500DE670E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A53B51682137ECF100DE670E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A53B51932137F39200DE670E /* DetailContactVC.swift in Sources */,
+				A53B51982137F3EE00DE670E /* StretchHeaderOptions.swift in Sources */,
+				A53B51972137F3EE00DE670E /* StretchHeader.swift in Sources */,
+				A53B51742137ECF100DE670E /* SecondViewController.swift in Sources */,
+				A53B51702137ECF100DE670E /* AppDelegate.swift in Sources */,
+				A53B51722137ECF100DE670E /* FirstViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A53B517E2137ECF500DE670E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A53B51872137ECF500DE670E /* SmartContactUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A53B51842137ECF500DE670E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A53B516B2137ECF100DE670E /* SmartContact */;
+			targetProxy = A53B51832137ECF500DE670E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A53B51752137ECF100DE670E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A53B51762137ECF100DE670E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A53B517A2137ECF500DE670E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A53B517B2137ECF500DE670E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A53B51892137ECF500DE670E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A53B518A2137ECF500DE670E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A53B518C2137ECF500DE670E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SmartContact/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sunflower.SmartContact;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A53B518D2137ECF500DE670E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SmartContact/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sunflower.SmartContact;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A53B518F2137ECF500DE670E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SmartContactUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sunflower.SmartContactUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SmartContact;
+			};
+			name = Debug;
+		};
+		A53B51902137ECF500DE670E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SmartContactUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sunflower.SmartContactUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SmartContact;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A53B51672137ECF100DE670E /* Build configuration list for PBXProject "SmartContact" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A53B51892137ECF500DE670E /* Debug */,
+				A53B518A2137ECF500DE670E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A53B518B2137ECF500DE670E /* Build configuration list for PBXNativeTarget "SmartContact" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A53B518C2137ECF500DE670E /* Debug */,
+				A53B518D2137ECF500DE670E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A53B518E2137ECF500DE670E /* Build configuration list for PBXNativeTarget "SmartContactUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A53B518F2137ECF500DE670E /* Debug */,
+				A53B51902137ECF500DE670E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A53B51642137ECF100DE670E /* Project object */;
+}
