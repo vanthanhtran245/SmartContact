@@ -43,6 +43,9 @@ open class Contact {
     /// An array of emails associated with the contact,
     open let emails: [(email: String, emailLabel: String )]
     
+    open var cnPhoneNumbers = [CNPhoneNumber]()
+    
+    var contacts: CNMutableContact?
     private static let dateFormatter: DateFormatter = DateFormatter()
     
     /*
@@ -75,6 +78,8 @@ open class Contact {
     ///
     /// - Parameter contact: A `CNContact` instance which supplies all the property values for this class.
     public init (contact: CNContact) {
+        contacts = contact.mutableCopy() as? CNMutableContact
+        cnPhoneNumbers = contact.phoneNumbers.map({$0.value})
         firstName = contact.givenName
         lastName = contact.familyName
         company = contact.organizationName

@@ -6,6 +6,7 @@
 import UIKit
 import Contacts
 import SwipeCellKit
+import SwiftyContacts
 
 typealias ContactsHandler = (_ contacts : [CNContact] , _ error : NSError?) -> Void
 
@@ -16,7 +17,7 @@ public enum SubtitleCellValue{
     case organization
 }
 
-open class MainContact: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
+class MainContact: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     var defaultOptions = SwipeOptions()
     var isSwipeRightEnabled = true
     var buttonDisplayMode: ButtonDisplayMode = .titleAndImage
@@ -326,22 +327,17 @@ open class MainContact: UIViewController, UITableViewDelegate, UITableViewDataSo
     open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! ContactCell
         let selectedContact =  cell.contact!
-        if multiSelectEnabled {
-            //Keeps track of enable=ing and disabling contacts
-            if cell.accessoryType == UITableViewCellAccessoryType.checkmark {
-                cell.accessoryType = UITableViewCellAccessoryType.none
-                selectedContacts = selectedContacts.filter(){
-                    return selectedContact.contactId != $0.contactId
-                }
+        if selectedContact.phoneNumbers.count > 1 {
+            let controller = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+            selectedContact.phoneNumbers.enumerated().forEach { (arg) in
+                let (index, item) = arg
+                controller.addAction(title: item.phoneNumber, style: .default, isEnabled: true, handler: { _ in
+                   makeCall(CNPhoneNumber: selectedContact.cnPhoneNumbers[index])
+                })
             }
-            else {
-                cell.accessoryType = UITableViewCellAccessoryType.checkmark
-                selectedContacts.append(selectedContact)
-            }
-        }
-        else {
-            //Single selection code
-            if searchBar.isFirstResponder { searchBar.resignFirstResponder() }
+            self.present(controller, animated: true, completion: nil)
+        } else if selectedContact.phoneNumbers.count == 1 {
+            makeCall(CNPhoneNumber: selectedContact.cnPhoneNumbers[0])
         }
     }
     
@@ -422,38 +418,49 @@ open class MainContact: UIViewController, UITableViewDelegate, UITableViewDataSo
         })
     }
     
+    func removeContact(with indexPath: IndexPath, contact: Contact) {
+        guard let selectedContact = contact.contacts else { return }
+        deleteContact(Contact: selectedContact, completionHandler: { result in
+            if case .Success =  result {
+                if let searchText = self.searchBar.text, !searchText.isEmpty {
+                    self.filteredContacts.remove(at: indexPath.row)
+                } else {
+                    guard var contactsForSection = self.orderedContacts[self.sortedContactKeys[indexPath.section]] else { return }
+                    contactsForSection.remove(at: indexPath.row)
+                    self.orderedContacts.updateValue(contactsForSection, forKey: self.sortedContactKeys[indexPath.section])
+                }
+                self.tableView.deleteRows(at: [indexPath], with: .automatic)
+            }
+        })
+    }
 }
 
 extension MainContact: SwipeTableViewCellDelegate {
 
-    public func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
+        let cell = tableView.cellForRow(at: indexPath) as! ContactCell
+        let selectedContact =  cell.contact!
         let flag = SwipeAction(style: .default, title: nil, handler: nil)
         flag.hidesWhenSelected = true
         configure(action: flag, with: .flag)
         let delete = SwipeAction(style: .default, title: nil) { action, indexPath in
-            //self.filteredContacts.remove(at: indexPath.row)
+            self.showAlert(title: "Message", message: "Do you want to delete contact?", buttonTitles: ["OK", "Cancel"], highlightedButtonIndex: 1, completion: { index in
+                if index == 0 {
+                    self.removeContact(with: indexPath, contact: selectedContact)
+                } else {
+                    cell.hideSwipe(animated: true)
+                }
+            })
         }
+        delete.hidesWhenSelected = true
         configure(action: delete, with: .trash)
-        let cell = tableView.cellForRow(at: indexPath) as! ContactCell
-        let closure: (UIAlertAction) -> Void = { _ in cell.hideSwipe(animated: true) }
-        let more = SwipeAction(style: .default, title: nil) { action, indexPath in
-            let controller = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-            controller.addAction(UIAlertAction(title: "Reply", style: .default, handler: closure))
-            controller.addAction(UIAlertAction(title: "Forward", style: .default, handler: closure))
-            controller.addAction(UIAlertAction(title: "Mark...", style: .default, handler: closure))
-            controller.addAction(UIAlertAction(title: "Notify Me...", style: .default, handler: closure))
-            controller.addAction(UIAlertAction(title: "Move Message...", style: .default, handler: closure))
-            controller.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: closure))
-            self.present(controller, animated: true, completion: nil)
-        }
-        configure(action: more, with: .more)
-        return [delete, flag, more]
+        return [delete, flag]
     }
     
-    public func tableView(_ tableView: UITableView, editActionsOptionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> SwipeOptions {
-        var options = SwipeOptions()
-        options.expansionStyle = orientation == .left ? .selection : .selection
-        options.transitionStyle = defaultOptions.transitionStyle
+    func tableView(_ tableView: UITableView, editActionsOptionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> SwipeOptions {
+        var options = SwipeTableOptions()
+        options.expansionStyle = .selection
+        options.transitionStyle = .border
         switch buttonStyle {
         case .backgroundColor:
             options.buttonSpacing = 11
@@ -461,14 +468,12 @@ extension MainContact: SwipeTableViewCellDelegate {
             options.buttonSpacing = 4
             options.backgroundColor = #colorLiteral(red: 0.9467939734, green: 0.9468161464, blue: 0.9468042254, alpha: 1)
         }
-        
         return options
     }
     
     func configure(action: SwipeAction, with descriptor: ActionDescriptor) {
         action.title = descriptor.title(forDisplayMode: buttonDisplayMode)
         action.image = descriptor.image(forStyle: buttonStyle, displayMode: buttonDisplayMode)
-        
         switch buttonStyle {
         case .backgroundColor:
             action.backgroundColor = descriptor.color

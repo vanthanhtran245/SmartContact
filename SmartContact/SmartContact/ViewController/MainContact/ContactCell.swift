@@ -13,6 +13,7 @@ class ContactCell: SwipeTableViewCell {
     @IBOutlet weak var contactImageView: UIImageView!
     @IBOutlet weak var contactInitialLabel: UILabel!
     @IBOutlet weak var contactContainerView: UIView!
+    @IBOutlet weak var favoriteButton: UIButton!
     
     var contact: Contact?
     
@@ -51,8 +52,18 @@ class ContactCell: SwipeTableViewCell {
             self.contactImageView.isHidden = true
             self.contactInitialLabel.isHidden = false
         }
+        let isFavorite = FavoriteHelper.shared.isFavorite(contactId: contact.contactId)
+        let image = isFavorite ? UIImage(named: "star") : UIImage(named: "favorite")
+        favoriteButton.setImage(image, for: .normal)
     }
     
+    @IBAction func doUpdateFavorite(_ sender: Any) {
+        guard let contact = contact else { return }
+        let result = FavoriteHelper.shared.updateFavorite(contact: contact)
+        let image = result ? UIImage(named: "star") : UIImage(named: "favorite")
+        favoriteButton.setImage(image, for: .normal)
+        contentView.layoutIfNeeded()
+    }
     func updateSubtitleBasedonType(_ subtitleType: SubtitleCellValue , contact: Contact) {
         
         switch subtitleType {
