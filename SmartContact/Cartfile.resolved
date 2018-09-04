@@ -1,4 +1,6 @@
 github "ReactiveX/RxSwift" "4.2.0"
+github "SwipeCellKit/SwipeCellKit" "2.4.3"
 github "satishbabariya/SwiftyContacts" "4b01ce23e68c916622d005d262af7a2b63cad985"
 github "vanthanhtran245/sunflowerSDK" "2c96bfa645ac49ee2e6c5fa1e3d653d32a22ff34"
+github "vincent-pradeilles/KeyPathKit" "1.3.1"
 github "younatics/YNSearch" "2.3.1"

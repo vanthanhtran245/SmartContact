@@ -11,10 +11,6 @@
 		6A1D7ED521391BC000C76FDD /* Cartfile.resolved in Resources */ = {isa = PBXBuildFile; fileRef = 6A1D7ED321391BC000C76FDD /* Cartfile.resolved */; };
 		6A1D7EDB21391DB200C76FDD /* SunflowerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A1D7EDA21391DB200C76FDD /* SunflowerSDK.framework */; };
 		6A462579213D81D000A3CFAF /* SearchBarTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A462578213D81CF00A3CFAF /* SearchBarTitleView.swift */; };
-		6A8EC0EB213942B100C08E23 /* Material.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A8EC0E82139424600C08E23 /* Material.framework */; };
-		6A8EC0EC213942B100C08E23 /* Material.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6A8EC0E82139424600C08E23 /* Material.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		6A8EC0ED213942B200C08E23 /* Motion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A8EC0E72139424600C08E23 /* Motion.framework */; };
-		6A8EC0EE213942B200C08E23 /* Motion.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6A8EC0E72139424600C08E23 /* Motion.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6A8EC10B21398E0100C08E23 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6A8EC0F821398E0100C08E23 /* Localizable.strings */; };
 		6A8EC10C21398E0100C08E23 /* SHSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8EC10221398E0100C08E23 /* SHSearchBar.swift */; };
 		6A8EC10D21398E0100C08E23 /* SHSearchBarConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8EC10321398E0100C08E23 /* SHSearchBarConfig.swift */; };
@@ -22,9 +18,7 @@
 		6A8EC11021398E0100C08E23 /* SHSearchBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8EC10621398E0100C08E23 /* SHSearchBarDelegate.swift */; };
 		6A8EC11121398E0100C08E23 /* UIImage+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8EC10721398E0100C08E23 /* UIImage+Style.swift */; };
 		6A8EC11221398E0100C08E23 /* Foundation + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8EC10821398E0100C08E23 /* Foundation + Extensions.swift */; };
-		6A8EC11621398F9800C08E23 /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8EC11521398F9700C08E23 /* ContactCell.swift */; };
 		6A8EC11921398FF000C08E23 /* ContactEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8EC11821398FF000C08E23 /* ContactEntry.swift */; };
-		6A8EC11B2139903900C08E23 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8EC11A2139903900C08E23 /* ContactViewController.swift */; };
 		A53B51702137ECF100DE670E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53B516F2137ECF100DE670E /* AppDelegate.swift */; };
 		A53B51742137ECF100DE670E /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53B51732137ECF100DE670E /* SecondViewController.swift */; };
 		A53B51772137ECF100DE670E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A53B51752137ECF100DE670E /* Main.storyboard */; };
@@ -34,6 +28,15 @@
 		A53B51932137F39200DE670E /* DetailContactVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53B51922137F39200DE670E /* DetailContactVC.swift */; };
 		A53B51972137F3EE00DE670E /* StretchHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53B51952137F3EE00DE670E /* StretchHeader.swift */; };
 		A53B51982137F3EE00DE670E /* StretchHeaderOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53B51962137F3EE00DE670E /* StretchHeaderOptions.swift */; };
+		A5F45E23213E3EF9000FEDC0 /* SearchBarHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F45E22213E3EF9000FEDC0 /* SearchBarHelper.swift */; };
+		A5F45E2B213E5A3E000FEDC0 /* MainContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F45E26213E5A3D000FEDC0 /* MainContact.swift */; };
+		A5F45E2C213E5A3E000FEDC0 /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F45E27213E5A3E000FEDC0 /* ContactCell.swift */; };
+		A5F45E2D213E5A3E000FEDC0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F45E28213E5A3E000FEDC0 /* Constants.swift */; };
+		A5F45E2E213E5A3E000FEDC0 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F45E29213E5A3E000FEDC0 /* Contact.swift */; };
+		A5F45E2F213E5A3E000FEDC0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F45E2A213E5A3E000FEDC0 /* Extensions.swift */; };
+		A5F45E31213E5A5F000FEDC0 /* JFContactCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5F45E30213E5A5F000FEDC0 /* JFContactCell.xib */; };
+		A5F45E34213E8332000FEDC0 /* SwipeCellKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5F45E33213E8332000FEDC0 /* SwipeCellKit.framework */; };
+		A5F45E36213E8E46000FEDC0 /* SwipeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F45E35213E8E46000FEDC0 /* SwipeHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,8 +56,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				6A8EC0EE213942B200C08E23 /* Motion.framework in Embed Frameworks */,
-				6A8EC0EC213942B100C08E23 /* Material.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -67,8 +68,6 @@
 		6A1D7ED321391BC000C76FDD /* Cartfile.resolved */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile.resolved; sourceTree = "<group>"; };
 		6A1D7EDA21391DB200C76FDD /* SunflowerSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SunflowerSDK.framework; path = Carthage/Build/iOS/SunflowerSDK.framework; sourceTree = "<group>"; };
 		6A462578213D81CF00A3CFAF /* SearchBarTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBarTitleView.swift; sourceTree = "<group>"; };
-		6A8EC0E72139424600C08E23 /* Motion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Motion.framework; path = SmartContact/FW/Motion.framework; sourceTree = "<group>"; };
-		6A8EC0E82139424600C08E23 /* Material.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Material.framework; path = SmartContact/FW/Material.framework; sourceTree = "<group>"; };
 		6A8EC0F921398E0100C08E23 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6A8EC0FA21398E0100C08E23 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		6A8EC0FB21398E0100C08E23 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -83,9 +82,7 @@
 		6A8EC10621398E0100C08E23 /* SHSearchBarDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHSearchBarDelegate.swift; sourceTree = "<group>"; };
 		6A8EC10721398E0100C08E23 /* UIImage+Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Style.swift"; sourceTree = "<group>"; };
 		6A8EC10821398E0100C08E23 /* Foundation + Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Foundation + Extensions.swift"; sourceTree = "<group>"; };
-		6A8EC11521398F9700C08E23 /* ContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
 		6A8EC11821398FF000C08E23 /* ContactEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactEntry.swift; sourceTree = "<group>"; };
-		6A8EC11A2139903900C08E23 /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		A53B516C2137ECF100DE670E /* SmartContact.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartContact.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A53B516F2137ECF100DE670E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A53B51732137ECF100DE670E /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +96,15 @@
 		A53B51922137F39200DE670E /* DetailContactVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailContactVC.swift; sourceTree = "<group>"; };
 		A53B51952137F3EE00DE670E /* StretchHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StretchHeader.swift; sourceTree = "<group>"; };
 		A53B51962137F3EE00DE670E /* StretchHeaderOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StretchHeaderOptions.swift; sourceTree = "<group>"; };
+		A5F45E22213E3EF9000FEDC0 /* SearchBarHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarHelper.swift; sourceTree = "<group>"; };
+		A5F45E26213E5A3D000FEDC0 /* MainContact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainContact.swift; sourceTree = "<group>"; };
+		A5F45E27213E5A3E000FEDC0 /* ContactCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
+		A5F45E28213E5A3E000FEDC0 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A5F45E29213E5A3E000FEDC0 /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		A5F45E2A213E5A3E000FEDC0 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		A5F45E30213E5A5F000FEDC0 /* JFContactCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JFContactCell.xib; sourceTree = "<group>"; };
+		A5F45E33213E8332000FEDC0 /* SwipeCellKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwipeCellKit.framework; path = Carthage/Build/iOS/SwipeCellKit.framework; sourceTree = "<group>"; };
+		A5F45E35213E8E46000FEDC0 /* SwipeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,9 +112,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5F45E34213E8332000FEDC0 /* SwipeCellKit.framework in Frameworks */,
 				6A1D7EDB21391DB200C76FDD /* SunflowerSDK.framework in Frameworks */,
-				6A8EC0EB213942B100C08E23 /* Material.framework in Frameworks */,
-				6A8EC0ED213942B200C08E23 /* Motion.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,8 +130,7 @@
 		6A1D7EC3213917A400C76FDD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6A8EC0E82139424600C08E23 /* Material.framework */,
-				6A8EC0E72139424600C08E23 /* Motion.framework */,
+				A5F45E33213E8332000FEDC0 /* SwipeCellKit.framework */,
 				6A1D7EDA21391DB200C76FDD /* SunflowerSDK.framework */,
 			);
 			name = Frameworks;
@@ -166,7 +170,7 @@
 		6A8EC11421398E3C00C08E23 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				6A8EC11521398F9700C08E23 /* ContactCell.swift */,
+				A5F45E30213E5A5F000FEDC0 /* JFContactCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -203,6 +207,7 @@
 		A53B516E2137ECF100DE670E /* SmartContact */ = {
 			isa = PBXGroup;
 			children = (
+				A5F45E21213E3EE1000FEDC0 /* Helper */,
 				6A8EC11721398FE300C08E23 /* Model */,
 				6A8EC11421398E3C00C08E23 /* View */,
 				6A8EC0F621398E0100C08E23 /* SHSearchBar */,
@@ -231,8 +236,8 @@
 		A53B51912137F37D00DE670E /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				A5F45E25213E5A16000FEDC0 /* MainContact */,
 				A53B51922137F39200DE670E /* DetailContactVC.swift */,
-				6A8EC11A2139903900C08E23 /* ContactViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -244,6 +249,27 @@
 				A53B51962137F3EE00DE670E /* StretchHeaderOptions.swift */,
 			);
 			path = StretchHeader;
+			sourceTree = "<group>";
+		};
+		A5F45E21213E3EE1000FEDC0 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				A5F45E22213E3EF9000FEDC0 /* SearchBarHelper.swift */,
+				A5F45E35213E8E46000FEDC0 /* SwipeHelper.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		A5F45E25213E5A16000FEDC0 /* MainContact */ = {
+			isa = PBXGroup;
+			children = (
+				A5F45E28213E5A3E000FEDC0 /* Constants.swift */,
+				A5F45E29213E5A3E000FEDC0 /* Contact.swift */,
+				A5F45E27213E5A3E000FEDC0 /* ContactCell.swift */,
+				A5F45E2A213E5A3E000FEDC0 /* Extensions.swift */,
+				A5F45E26213E5A3D000FEDC0 /* MainContact.swift */,
+			);
+			path = MainContact;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -343,6 +369,7 @@
 				6A1D7ED421391BC000C76FDD /* Cartfile in Resources */,
 				6A1D7ED521391BC000C76FDD /* Cartfile.resolved in Resources */,
 				A53B51772137ECF100DE670E /* Main.storyboard in Resources */,
+				A5F45E31213E5A5F000FEDC0 /* JFContactCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,6 +390,7 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/SunflowerSDK.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwipeCellKit.framework",
 			);
 			name = "Copy carthage framework";
 			outputPaths = (
@@ -378,17 +406,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5F45E2C213E5A3E000FEDC0 /* ContactCell.swift in Sources */,
+				A5F45E2D213E5A3E000FEDC0 /* Constants.swift in Sources */,
 				A53B51932137F39200DE670E /* DetailContactVC.swift in Sources */,
-				6A8EC11B2139903900C08E23 /* ContactViewController.swift in Sources */,
 				A53B51982137F3EE00DE670E /* StretchHeaderOptions.swift in Sources */,
 				A53B51972137F3EE00DE670E /* StretchHeader.swift in Sources */,
-				6A8EC11621398F9800C08E23 /* ContactCell.swift in Sources */,
+				A5F45E2B213E5A3E000FEDC0 /* MainContact.swift in Sources */,
 				A53B51742137ECF100DE670E /* SecondViewController.swift in Sources */,
 				6A8EC11921398FF000C08E23 /* ContactEntry.swift in Sources */,
 				6A8EC10E21398E0100C08E23 /* SHSearchBarTextField.swift in Sources */,
 				6A462579213D81D000A3CFAF /* SearchBarTitleView.swift in Sources */,
+				A5F45E2E213E5A3E000FEDC0 /* Contact.swift in Sources */,
+				A5F45E2F213E5A3E000FEDC0 /* Extensions.swift in Sources */,
+				A5F45E36213E8E46000FEDC0 /* SwipeHelper.swift in Sources */,
 				6A8EC11021398E0100C08E23 /* SHSearchBarDelegate.swift in Sources */,
 				A53B51702137ECF100DE670E /* AppDelegate.swift in Sources */,
+				A5F45E23213E3EF9000FEDC0 /* SearchBarHelper.swift in Sources */,
 				6A8EC11121398E0100C08E23 /* UIImage+Style.swift in Sources */,
 				6A8EC10D21398E0100C08E23 /* SHSearchBarConfig.swift in Sources */,
 				6A8EC11221398E0100C08E23 /* Foundation + Extensions.swift in Sources */,
@@ -569,10 +602,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MR5T4DEYMH;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SRCROOT)/Carthage/Build/iOS",
-					"$(PROJECT_DIR)/SmartContact/FW",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = SmartContact/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -595,10 +629,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MR5T4DEYMH;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SRCROOT)/Carthage/Build/iOS",
-					"$(PROJECT_DIR)/SmartContact/FW",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = SmartContact/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
