@@ -6,12 +6,11 @@
     },
     {
       "idiom" : "universal",
-      "filename" : "unfavorites.png",
+      "filename" : "Favorited.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "unfavorites-1.png",
       "scale" : "3x"
     }
   ],

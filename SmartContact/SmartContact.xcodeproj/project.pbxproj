@@ -42,6 +42,15 @@
 		A5F45E31213E5A5F000FEDC0 /* JFContactCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5F45E30213E5A5F000FEDC0 /* JFContactCell.xib */; };
 		A5F45E34213E8332000FEDC0 /* SwipeCellKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5F45E33213E8332000FEDC0 /* SwipeCellKit.framework */; };
 		A5F45E36213E8E46000FEDC0 /* SwipeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F45E35213E8E46000FEDC0 /* SwipeHelper.swift */; };
+		A5F45E3F213FB7C6000FEDC0 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F45E3E213FB7C6000FEDC0 /* UserDefaults.swift */; };
+		A5F45E42213FBAFF000FEDC0 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F45E41213FBAFF000FEDC0 /* SettingsViewController.swift */; };
+		A5F45E5C213FC33F000FEDC0 /* SampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F45E5A213FC33F000FEDC0 /* SampleView.swift */; };
+		A5F45E5D213FC33F000FEDC0 /* SampleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5F45E5B213FC33F000FEDC0 /* SampleView.xib */; };
+		A5F45E5F213FC3F1000FEDC0 /* CustomizableActionSheet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5F45E5E213FC3F0000FEDC0 /* CustomizableActionSheet.framework */; };
+		A5F45E61213FC658000FEDC0 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F45E60213FC658000FEDC0 /* UIColor.swift */; };
+		A5F45E63213FC728000FEDC0 /* NotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F45E62213FC728000FEDC0 /* NotificationCenter.swift */; };
+		A5F45E65213FC7F9000FEDC0 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F45E64213FC7F9000FEDC0 /* UINavigationController.swift */; };
+		A5F45E68213FC937000FEDC0 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F45E67213FC937000FEDC0 /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +124,15 @@
 		A5F45E30213E5A5F000FEDC0 /* JFContactCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JFContactCell.xib; sourceTree = "<group>"; };
 		A5F45E33213E8332000FEDC0 /* SwipeCellKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwipeCellKit.framework; path = Carthage/Build/iOS/SwipeCellKit.framework; sourceTree = "<group>"; };
 		A5F45E35213E8E46000FEDC0 /* SwipeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeHelper.swift; sourceTree = "<group>"; };
+		A5F45E3E213FB7C6000FEDC0 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		A5F45E41213FBAFF000FEDC0 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		A5F45E5A213FC33F000FEDC0 /* SampleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleView.swift; sourceTree = "<group>"; };
+		A5F45E5B213FC33F000FEDC0 /* SampleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SampleView.xib; sourceTree = "<group>"; };
+		A5F45E5E213FC3F0000FEDC0 /* CustomizableActionSheet.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CustomizableActionSheet.framework; path = Carthage/Build/iOS/CustomizableActionSheet.framework; sourceTree = "<group>"; };
+		A5F45E60213FC658000FEDC0 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		A5F45E62213FC728000FEDC0 /* NotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenter.swift; sourceTree = "<group>"; };
+		A5F45E64213FC7F9000FEDC0 /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
+		A5F45E67213FC937000FEDC0 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +140,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5F45E5F213FC3F1000FEDC0 /* CustomizableActionSheet.framework in Frameworks */,
 				6A29BB2D213EB315006CAC91 /* SwiftyContacts.framework in Frameworks */,
 				A5F45E34213E8332000FEDC0 /* SwipeCellKit.framework in Frameworks */,
 				6A1D7EDB21391DB200C76FDD /* SunflowerSDK.framework in Frameworks */,
@@ -141,6 +160,7 @@
 		6A1D7EC3213917A400C76FDD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A5F45E5E213FC3F0000FEDC0 /* CustomizableActionSheet.framework */,
 				6A29BB2C213EB314006CAC91 /* SwiftyContacts.framework */,
 				A5F45E33213E8332000FEDC0 /* SwipeCellKit.framework */,
 				6A1D7EDA21391DB200C76FDD /* SunflowerSDK.framework */,
@@ -235,6 +255,7 @@
 		A53B516E2137ECF100DE670E /* SmartContact */ = {
 			isa = PBXGroup;
 			children = (
+				A5F45E3B213FB79B000FEDC0 /* Extensions etc */,
 				A5F45E21213E3EE1000FEDC0 /* Helper */,
 				6A8EC11721398FE300C08E23 /* Model */,
 				6A8EC11421398E3C00C08E23 /* View */,
@@ -265,6 +286,8 @@
 		A53B51912137F37D00DE670E /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				A5F45E66213FC92B000FEDC0 /* Base */,
+				A5F45E40213FBAEE000FEDC0 /* Setting */,
 				6A29BB34213EBBF2006CAC91 /* Favorite */,
 				6A29BB2E213EB33C006CAC91 /* GroupContact */,
 				A5F45E25213E5A16000FEDC0 /* MainContact */,
@@ -302,6 +325,43 @@
 				A5F45E26213E5A3D000FEDC0 /* MainContact.swift */,
 			);
 			path = MainContact;
+			sourceTree = "<group>";
+		};
+		A5F45E3B213FB79B000FEDC0 /* Extensions etc */ = {
+			isa = PBXGroup;
+			children = (
+				A5F45E3E213FB7C6000FEDC0 /* UserDefaults.swift */,
+				A5F45E60213FC658000FEDC0 /* UIColor.swift */,
+				A5F45E62213FC728000FEDC0 /* NotificationCenter.swift */,
+				A5F45E64213FC7F9000FEDC0 /* UINavigationController.swift */,
+			);
+			path = "Extensions etc";
+			sourceTree = "<group>";
+		};
+		A5F45E40213FBAEE000FEDC0 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				A5F45E59213FC30C000FEDC0 /* ColorPicker */,
+				A5F45E41213FBAFF000FEDC0 /* SettingsViewController.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		A5F45E59213FC30C000FEDC0 /* ColorPicker */ = {
+			isa = PBXGroup;
+			children = (
+				A5F45E5A213FC33F000FEDC0 /* SampleView.swift */,
+				A5F45E5B213FC33F000FEDC0 /* SampleView.xib */,
+			);
+			path = ColorPicker;
+			sourceTree = "<group>";
+		};
+		A5F45E66213FC92B000FEDC0 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				A5F45E67213FC937000FEDC0 /* BaseViewController.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -399,6 +459,7 @@
 				6A8EC10B21398E0100C08E23 /* Localizable.strings in Resources */,
 				A53B51792137ECF500DE670E /* Assets.xcassets in Resources */,
 				6A1D7ED421391BC000C76FDD /* Cartfile in Resources */,
+				A5F45E5D213FC33F000FEDC0 /* SampleView.xib in Resources */,
 				6A1D7ED521391BC000C76FDD /* Cartfile.resolved in Resources */,
 				A53B51772137ECF100DE670E /* Main.storyboard in Resources */,
 				A5F45E31213E5A5F000FEDC0 /* JFContactCell.xib in Resources */,
@@ -424,6 +485,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/SunflowerSDK.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SwipeCellKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftyContacts.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/CustomizableActionSheet.framework",
 			);
 			name = "Copy carthage framework";
 			outputPaths = (
@@ -440,11 +502,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A29BB36213EBC02006CAC91 /* FavoriteViewController.swift in Sources */,
+				A5F45E61213FC658000FEDC0 /* UIColor.swift in Sources */,
 				A5F45E2C213E5A3E000FEDC0 /* ContactCell.swift in Sources */,
 				A5F45E2D213E5A3E000FEDC0 /* Constants.swift in Sources */,
+				A5F45E68213FC937000FEDC0 /* BaseViewController.swift in Sources */,
 				A53B51932137F39200DE670E /* DetailContactVC.swift in Sources */,
 				A53B51982137F3EE00DE670E /* StretchHeaderOptions.swift in Sources */,
 				6A29BB33213EBA8A006CAC91 /* SmartContact.xcdatamodeld in Sources */,
+				A5F45E3F213FB7C6000FEDC0 /* UserDefaults.swift in Sources */,
 				A53B51972137F3EE00DE670E /* StretchHeader.swift in Sources */,
 				A5F45E2B213E5A3E000FEDC0 /* MainContact.swift in Sources */,
 				A53B51742137ECF100DE670E /* SecondViewController.swift in Sources */,
@@ -453,14 +518,18 @@
 				6A462579213D81D000A3CFAF /* SearchBarTitleView.swift in Sources */,
 				A5F45E2E213E5A3E000FEDC0 /* Contact.swift in Sources */,
 				A5F45E2F213E5A3E000FEDC0 /* Extensions.swift in Sources */,
+				A5F45E63213FC728000FEDC0 /* NotificationCenter.swift in Sources */,
 				A5F45E36213E8E46000FEDC0 /* SwipeHelper.swift in Sources */,
 				6A29BB38213EC3ED006CAC91 /* FavoriteHelper.swift in Sources */,
 				6A8EC11021398E0100C08E23 /* SHSearchBarDelegate.swift in Sources */,
 				A53B51702137ECF100DE670E /* AppDelegate.swift in Sources */,
+				A5F45E65213FC7F9000FEDC0 /* UINavigationController.swift in Sources */,
+				A5F45E5C213FC33F000FEDC0 /* SampleView.swift in Sources */,
 				A5F45E23213E3EF9000FEDC0 /* SearchBarHelper.swift in Sources */,
 				6A8EC11121398E0100C08E23 /* UIImage+Style.swift in Sources */,
 				6A29BB30213EB34A006CAC91 /* GroupContactViewController.swift in Sources */,
 				6A8EC10D21398E0100C08E23 /* SHSearchBarConfig.swift in Sources */,
+				A5F45E42213FBAFF000FEDC0 /* SettingsViewController.swift in Sources */,
 				6A8EC11221398E0100C08E23 /* Foundation + Extensions.swift in Sources */,
 				6A8EC10C21398E0100C08E23 /* SHSearchBar.swift in Sources */,
 			);

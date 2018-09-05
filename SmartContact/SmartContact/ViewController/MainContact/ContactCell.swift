@@ -40,7 +40,7 @@ class ContactCell: SwipeTableViewCell {
     func updateContactsinUI(_ contact: Contact, indexPath: IndexPath, subtitleType: SubtitleCellValue) {
         self.contact = contact
         //Update all UI in the cell here
-        self.contactTextLabel?.text = contact.displayName
+        self.contactTextLabel?.text = UserDefaults.showFirstNameBeforeLast ? contact.displayNameWithLastNameFirst : contact.displayName
         updateSubtitleBasedonType(subtitleType, contact: contact)
         if contact.thumbnailProfileImage != nil {
             self.contactImageView?.image = contact.thumbnailProfileImage
@@ -53,16 +53,11 @@ class ContactCell: SwipeTableViewCell {
             self.contactInitialLabel.isHidden = false
         }
         let isFavorite = FavoriteHelper.shared.isFavorite(contactId: contact.contactId)
-        let image = isFavorite ? UIImage(named: "star") : UIImage(named: "favorite")
+        let image = isFavorite ? UIImage(named: "star") : UIImage(named: "unstar")
         favoriteButton.setImage(image, for: .normal)
     }
     
     @IBAction func doUpdateFavorite(_ sender: Any) {
-        guard let contact = contact else { return }
-        let result = FavoriteHelper.shared.updateFavorite(contact: contact)
-        let image = result ? UIImage(named: "star") : UIImage(named: "favorite")
-        favoriteButton.setImage(image, for: .normal)
-        contentView.layoutIfNeeded()
     }
     func updateSubtitleBasedonType(_ subtitleType: SubtitleCellValue , contact: Contact) {
         

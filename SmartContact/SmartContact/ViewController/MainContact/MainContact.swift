@@ -7,8 +7,11 @@ import UIKit
 import Contacts
 import SwipeCellKit
 import SwiftyContacts
+import Messages
+import MessageUI
 
 typealias ContactsHandler = (_ contacts : [CNContact] , _ error : NSError?) -> Void
+typealias SelectPhoneNumberCallBack = (_ phonenumber : String?, _ selectIndex: Int?) -> Void
 
 public enum SubtitleCellValue{
     case phoneNumber
@@ -17,14 +20,16 @@ public enum SubtitleCellValue{
     case organization
 }
 
-class MainContact: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
+class MainContact: BaseViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     var defaultOptions = SwipeOptions()
     var isSwipeRightEnabled = true
-    var buttonDisplayMode: ButtonDisplayMode = .titleAndImage
+    var buttonDisplayMode: ButtonDisplayMode = .imageOnly
     var buttonStyle: ButtonStyle = .backgroundColor
     var usesTallCells = false
     // MARK: - Properties
     
+    @IBOutlet weak var syncContactButton: UIBarButtonItem!
+    @IBOutlet weak var addNewContact: UIBarButtonItem!
     public private(set) lazy var contactsStore: CNContactStore = { return CNContactStore() }()
     
     /// Contacts ordered in dictionary alphabetically using `sortOrder`.
@@ -42,7 +47,7 @@ class MainContact: UIViewController, UITableViewDelegate, UITableViewDataSource,
     public var shouldShowIndexBar: Bool
     
     /// The contact value type to display in the cells' subtitle labels.
-    public let subtitleCellValue: SubtitleCellValue
+    public var subtitleCellValue: SubtitleCellValue = .phoneNumber
     
     /// The order that the contacts should be sorted.
     public var sortOrder: CNContactSortOrder = CNContactSortOrder.userDefault {
@@ -52,8 +57,6 @@ class MainContact: UIViewController, UITableViewDelegate, UITableViewDataSource,
             }
         }
     }
-    
-    private var createContactButton: UIButton!
     
     //Enables custom filtering of contacts.
     public var shouldIncludeContact: ((CNContact) -> Bool)? {
@@ -79,28 +82,18 @@ class MainContact: UIViewController, UITableViewDelegate, UITableViewDataSource,
         return tableView
     }()
 
-    private lazy var button: UIButton = {
-        let button =  UIButton()
-        button.setTitle("+", for: .normal)
-        button.backgroundColor = UIColor.red
-        button.setTitleColor(.red, for: .normal)
-        tableView.addSubview(button)
-        button.snp.makeConstraints({ make in
-            make.width.equalTo(66)
-            make.height.equalTo(66)
-            make.bottom.equalTo(tableView.snp.bottom).offset(-20)
-            make.right.equalTo(tableView.snp.right).offset(-20)
-        })
-        print("Button frame \(button.frame)")
-        return button
-    }()
     
-    @IBOutlet weak var createContact: UIButton!
+    @IBAction func syncContact(_ sender: Any) {
+        UIView.animate(withDuration: 0.5, delay: 0.5, options: UIViewAnimationOptions.curveEaseIn, animations: {
+            self.navigationItem.leftBarButtonItem?.customView?.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi * 2))
+        }, completion: nil)
+    }
     
+    @IBAction func addNewContact(_ sender: Any) {
+    }
     
     required public init?(coder aDecoder: NSCoder) {
         self.multiSelectEnabled = false
-        self.subtitleCellValue = .phoneNumber
         self.shouldShowIndexBar = true
         super.init(coder: aDecoder)
     }
@@ -109,20 +102,21 @@ class MainContact: UIViewController, UITableViewDelegate, UITableViewDataSource,
     
     open override func loadView() {
         self.view = tableView
-        setupCreateContactButton()
-        print("Frame \(createContactButton.frame)")
     }
     
     override open func viewDidLoad() {
         super.viewDidLoad()
+        createGroups()
         self.title = GlobalConstants.Strings.contactsTitle
         registerContactCell()
         setUpSearchBar()
         reloadContacts()
     }
     
-    func setupCreateContactButton() {
-        createContactButton = button
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.subtitleCellValue = UserDefaults.subtitleWithEmail ? .email : .phoneNumber
+        tableView.reloadData()
     }
     
     func setUpSearchBar() {
@@ -160,6 +154,32 @@ class MainContact: UIViewController, UITableViewDelegate, UITableViewDataSource,
             }
         }
     }
+    
+    func createGroups() {
+//        createGroup(Group_Name: "Thanh Test Group") { (result) in
+//            switch result{
+//            case .Success(response: let bool):
+//                addContactToGroup(Group: group, Contact: contact) { (result) in
+//                    switch result{
+//                    case .Success(response: let bool):
+//                        if bool{
+//                            print("Contact Sucessfully Added To Group")
+//                        }
+//                        break
+//                    case .Error(error: let error):
+//                        print(error.localizedDescription)
+//                        break
+//                    }
+//                }
+//                break
+//            case .Error(error: let error):
+//                print(error.localizedDescription)
+//                break
+//            }
+//        }
+    }
+    
+    
     
     private func getContacts(_ completion:  @escaping ContactsHandler) {
         // TODO: Set up error domain
@@ -291,6 +311,10 @@ class MainContact: UIViewController, UITableViewDelegate, UITableViewDataSource,
         return 0
     }
     
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 40
+    }
+    
     // MARK: - Table View Delegates
     
     open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -325,20 +349,6 @@ class MainContact: UIViewController, UITableViewDelegate, UITableViewDataSource,
     
     
     open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath) as! ContactCell
-        let selectedContact =  cell.contact!
-        if selectedContact.phoneNumbers.count > 1 {
-            let controller = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-            selectedContact.phoneNumbers.enumerated().forEach { (arg) in
-                let (index, item) = arg
-                controller.addAction(title: item.phoneNumber, style: .default, isEnabled: true, handler: { _ in
-                   makeCall(CNPhoneNumber: selectedContact.cnPhoneNumbers[index])
-                })
-            }
-            self.present(controller, animated: true, completion: nil)
-        } else if selectedContact.phoneNumbers.count == 1 {
-            makeCall(CNPhoneNumber: selectedContact.cnPhoneNumbers[0])
-        }
     }
     
     open func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -430,8 +440,38 @@ class MainContact: UIViewController, UITableViewDelegate, UITableViewDataSource,
                     self.orderedContacts.updateValue(contactsForSection, forKey: self.sortedContactKeys[indexPath.section])
                 }
                 self.tableView.deleteRows(at: [indexPath], with: .automatic)
+                let contactsInSection = self.orderedContacts[self.sortedContactKeys[indexPath.section]]
+                guard let contacts = contactsInSection, contacts.count == 0 else { return }
+                self.sortedContactKeys.remove(at: indexPath.section)
+                let indexSet = IndexSet.init(integer: indexPath.section)
+                self.tableView.deleteSections(indexSet, with: .automatic)
             }
         })
+    }
+    
+    func makeCallWithContact(selectedContact: Contact) {
+        selectPhoneNumberWithActionSheet(selectedContact: selectedContact) { (phoneNumber, index) in
+            guard let indexSelect = index else { return }
+            makeCall(CNPhoneNumber: selectedContact.cnPhoneNumbers[indexSelect])
+        }
+    }
+    
+    func selectPhoneNumberWithActionSheet(selectedContact: Contact, completion:  @escaping SelectPhoneNumberCallBack) {
+        if selectedContact.phoneNumbers.count > 1 {
+            let controller = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+            selectedContact.phoneNumbers.enumerated().forEach { (arg) in
+                let (index, item) = arg
+                controller.addAction(title: item.phoneNumber, style: .default, isEnabled: true, handler: { _ in
+                    completion(item.phoneNumber, index)
+                })
+            }
+            controller.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            self.present(controller, animated: true, completion: nil)
+        } else if selectedContact.phoneNumbers.count == 1 {
+            completion(selectedContact.phoneNumbers[0].phoneNumber, 0)
+        } else {
+            completion(nil, nil)
+        }
     }
 }
 
@@ -440,21 +480,47 @@ extension MainContact: SwipeTableViewCellDelegate {
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
         let cell = tableView.cellForRow(at: indexPath) as! ContactCell
         let selectedContact =  cell.contact!
-        let flag = SwipeAction(style: .default, title: nil, handler: nil)
-        flag.hidesWhenSelected = true
-        configure(action: flag, with: .flag)
-        let delete = SwipeAction(style: .default, title: nil) { action, indexPath in
-            self.showAlert(title: "Message", message: "Do you want to delete contact?", buttonTitles: ["OK", "Cancel"], highlightedButtonIndex: 1, completion: { index in
-                if index == 0 {
-                    self.removeContact(with: indexPath, contact: selectedContact)
-                } else {
-                    cell.hideSwipe(animated: true)
-                }
-            })
+        if orientation == .left {
+            guard isSwipeRightEnabled else { return nil }
+            let call = SwipeAction(style: .default, title: nil) { action, indexPath in
+                self.makeCallWithContact(selectedContact: selectedContact)
+            }
+            configure(action: call, with: .call)
+            let message = SwipeAction(style: .default, title: nil) { action, indexPath in
+                self.selectPhoneNumberWithActionSheet(selectedContact: selectedContact, completion: { (phoneNumber, index) in
+                    guard let number = phoneNumber, MFMessageComposeViewController.canSendText() else { return }
+                    let composeVC = MFMessageComposeViewController()
+                    composeVC.messageComposeDelegate = self
+                    composeVC.recipients = [number]
+                    composeVC.body = ""
+                    self.present(composeVC, animated: true, completion: nil)
+                })
+            }
+            configure(action: message, with: .message)
+            let actions = [call, message]
+            actions.forEach({ $0.hidesWhenSelected = true })
+            return actions
+        } else {
+            let isFavoriteContact = FavoriteHelper.shared.isFavorite(contactId: selectedContact.contactId)
+            let favorite = SwipeAction(style: .default, title: nil) { action, indexPath in
+                FavoriteHelper.shared.updateFavorite(contact: selectedContact)
+                tableView.reloadRows(at: [indexPath], with: .automatic)
+            }
+            configure(action: favorite, with: isFavoriteContact ? .favorite : .notfavorite)
+            let delete = SwipeAction(style: .default, title: nil) { action, indexPath in
+                self.showAlert(title: "Message", message: "Do you want to delete contact?", buttonTitles: ["OK", "Cancel"], highlightedButtonIndex: 1, completion: { index in
+                    if index == 0 {
+                        self.removeContact(with: indexPath, contact: selectedContact)
+                    } else {
+                        cell.hideSwipe(animated: true)
+                    }
+                })
+            }
+            configure(action: delete, with: .trash)
+            let actions = [delete, favorite]
+            actions.forEach({ $0.hidesWhenSelected = true })
+            return actions
         }
-        delete.hidesWhenSelected = true
-        configure(action: delete, with: .trash)
-        return [delete, flag]
     }
     
     func tableView(_ tableView: UITableView, editActionsOptionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> SwipeOptions {
@@ -463,7 +529,7 @@ extension MainContact: SwipeTableViewCellDelegate {
         options.transitionStyle = .border
         switch buttonStyle {
         case .backgroundColor:
-            options.buttonSpacing = 11
+            options.buttonSpacing = 5
         case .circular:
             options.buttonSpacing = 4
             options.backgroundColor = #colorLiteral(red: 0.9467939734, green: 0.9468161464, blue: 0.9468042254, alpha: 1)
@@ -483,5 +549,12 @@ extension MainContact: SwipeTableViewCellDelegate {
             action.font = .systemFont(ofSize: 13)
             action.transitionDelegate = ScaleTransition.default
         }
+    }
+}
+
+extension MainContact: MFMessageComposeViewControllerDelegate {
+    func messageComposeViewController(_ controller: MFMessageComposeViewController,
+                                      didFinishWith result: MessageComposeResult) {
+        controller.dismiss(animated: true, completion: nil)
     }
 }

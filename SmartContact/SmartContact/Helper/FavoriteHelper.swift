@@ -29,15 +29,14 @@ class FavoriteHelper {
     func fetchFavoriteContact() {
         favoriteContacts = ModelUtils.fetchObjects(entity: Favorite.self, context: context)
     }
-    
-    func updateFavorite(contact: Contact) -> Bool {
-        guard let contactId = contact.contactId else { return false }
+
+    func updateFavorite(contact: Contact) {
+        guard let contactId = contact.contactId else { return }
         //Check exist in database
         let result = ModelUtils.fetchObject(entity: Favorite.self, predicate: conditionPredicate(contactId: contactId), sortDescriptors: sortDescriptors, context: context)
         if let contactResult = result {
             ModelUtils.delete([contactResult], in: context)
             fetchFavoriteContact()
-            return false
         } else {
             //not exist -- create new
             let contactCreate = Favorite(context: context)
@@ -48,7 +47,6 @@ class FavoriteHelper {
             contactCreate.lastName = contact.lastName
             ModelUtils.persist(synchronously: false)
             fetchFavoriteContact()
-            return true
         }
     }
 }

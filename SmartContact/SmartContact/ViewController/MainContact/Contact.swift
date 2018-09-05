@@ -56,6 +56,11 @@ open class Contact {
         return firstName + " " + lastName
     }
     
+    
+    open var displayNameWithLastNameFirst: String {
+        return lastName + " " + firstName
+    }
+    
     open var initials: String {
         var initials: String = ""
         
@@ -69,7 +74,7 @@ open class Contact {
         
         return initials
     }
-    
+
     /*
      *  MARK: - Object Life Cycle
      */
