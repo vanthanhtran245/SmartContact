@@ -18,16 +18,11 @@ class ContactCell: SwipeTableViewCell {
     var contact: Contact?
     
     override func awakeFromNib() {
-        
         super.awakeFromNib()
         // Initialization code
         selectionStyle = UITableViewCellSelectionStyle.none
         contactContainerView.layer.masksToBounds = true
         contactContainerView.layer.cornerRadius = contactContainerView.frame.size.width/2
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
     }
     
     func updateInitialsColorForIndexPath(_ indexpath: IndexPath) {
@@ -52,6 +47,10 @@ class ContactCell: SwipeTableViewCell {
             self.contactImageView.isHidden = true
             self.contactInitialLabel.isHidden = false
         }
+        refreshFavorite(contact: contact)
+    }
+    
+    func refreshFavorite(contact: Contact) {
         let isFavorite = FavoriteHelper.shared.isFavorite(contactId: contact.contactId)
         let image = isFavorite ? UIImage(named: "star") : UIImage(named: "unstar")
         favoriteButton.setImage(image, for: .normal)
@@ -59,13 +58,11 @@ class ContactCell: SwipeTableViewCell {
     
     @IBAction func doUpdateFavorite(_ sender: Any) {
     }
+    
     func updateSubtitleBasedonType(_ subtitleType: SubtitleCellValue , contact: Contact) {
-        
         switch subtitleType {
-            
         case SubtitleCellValue.phoneNumber:
             let phoneNumberCount = contact.phoneNumbers.count
-            
             if phoneNumberCount == 1  {
                 self.contactDetailTextLabel.text = "\(contact.phoneNumbers[0].phoneNumber)"
             }
@@ -77,7 +74,6 @@ class ContactCell: SwipeTableViewCell {
             }
         case SubtitleCellValue.email:
             let emailCount = contact.emails.count
-        
             if emailCount == 1  {
                 self.contactDetailTextLabel.text = "\(contact.emails[0].email)"
             }

@@ -30,14 +30,18 @@ class GroupContactViewController: BaseViewController {
             case .Error(error: let error):
                 print("Error \(error)")
             }
-            
         }
+        
+        let alert = UIAlertController(style: .alert)
+        alert.addContactsPicker { contact in Log(contact) }
+        alert.addAction(title: "Cancel", style: .cancel)
+        alert.show()
     }
     
     func groupsSuccess(groups: [CNGroup]) {
         groups.forEach { group in
             groupName.append(group.name)
-            fetchContactsInGorup(Group: group) { (result) in
+            fetchContactsInGorup2(Group: group) { (result) in
                 if case .Success(let contactsResult) = result {
                     var temps:[Contact] = []
                     contactsResult.forEach {
