@@ -23,28 +23,18 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No data" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uP7-ed-SBq">
-                                <rect key="frame" x="20" y="291" width="335" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Fw-w7-cV0" firstAttribute="trailing" secondItem="O1u-W8-tvY" secondAttribute="trailing" id="CYD-Pl-721"/>
-                            <constraint firstItem="uP7-ed-SBq" firstAttribute="centerY" secondItem="QS5-Rx-YEW" secondAttribute="centerY" id="Dy6-av-sOa"/>
-                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="uP7-ed-SBq" secondAttribute="trailing" constant="20" id="Fme-hC-qip"/>
                             <constraint firstAttribute="bottom" secondItem="6Fw-w7-cV0" secondAttribute="bottom" id="Luj-Zm-ZBL"/>
                             <constraint firstItem="6Fw-w7-cV0" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" id="NAG-i4-ao7"/>
                             <constraint firstItem="6Fw-w7-cV0" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" id="en3-gP-Ce0"/>
-                            <constraint firstItem="uP7-ed-SBq" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="lEe-8w-FL5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Group" id="RiN-VX-Pg0"/>
                     <connections>
-                        <outlet property="lbNoData" destination="uP7-ed-SBq" id="bbn-KQ-69k"/>
                         <outlet property="tableView" destination="6Fw-w7-cV0" id="wnS-OG-9P4"/>
                     </connections>
                 </viewController>

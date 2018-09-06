@@ -16,6 +16,10 @@
 		6A29BB36213EBC02006CAC91 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A29BB35213EBC02006CAC91 /* FavoriteViewController.swift */; };
 		6A29BB38213EC3ED006CAC91 /* FavoriteHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A29BB37213EC3ED006CAC91 /* FavoriteHelper.swift */; };
 		6A8EC11921398FF000C08E23 /* ContactEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8EC11821398FF000C08E23 /* ContactEntry.swift */; };
+		6AB0C1ED21416E1500FC6D81 /* GroupHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB0C1EB21416E1500FC6D81 /* GroupHeaderView.swift */; };
+		6AB0C1EE21416E1500FC6D81 /* GroupHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AB0C1EC21416E1500FC6D81 /* GroupHeaderView.xib */; };
+		6AB0C1F121416EF600FC6D81 /* NoContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB0C1EF21416EF600FC6D81 /* NoContactCell.swift */; };
+		6AB0C1F221416EF600FC6D81 /* NoContactCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AB0C1F021416EF600FC6D81 /* NoContactCell.xib */; };
 		A507A5782140B055001D0D59 /* ContactsPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A507A5712140B055001D0D59 /* ContactsPickerViewController.swift */; };
 		A507A5792140B055001D0D59 /* Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = A507A5732140B055001D0D59 /* Contacts.swift */; };
 		A507A57E2140B147001D0D59 /* Common+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A507A57C2140B147001D0D59 /* Common+Extensions.swift */; };
@@ -88,6 +92,10 @@
 		6A29BB35213EBC02006CAC91 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		6A29BB37213EC3ED006CAC91 /* FavoriteHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteHelper.swift; sourceTree = "<group>"; };
 		6A8EC11821398FF000C08E23 /* ContactEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactEntry.swift; sourceTree = "<group>"; };
+		6AB0C1EB21416E1500FC6D81 /* GroupHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupHeaderView.swift; sourceTree = "<group>"; };
+		6AB0C1EC21416E1500FC6D81 /* GroupHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupHeaderView.xib; sourceTree = "<group>"; };
+		6AB0C1EF21416EF600FC6D81 /* NoContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoContactCell.swift; sourceTree = "<group>"; };
+		6AB0C1F021416EF600FC6D81 /* NoContactCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoContactCell.xib; sourceTree = "<group>"; };
 		A507A5712140B055001D0D59 /* ContactsPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsPickerViewController.swift; sourceTree = "<group>"; };
 		A507A5732140B055001D0D59 /* Contacts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contacts.swift; sourceTree = "<group>"; };
 		A507A57C2140B147001D0D59 /* Common+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Common+Extensions.swift"; sourceTree = "<group>"; };
@@ -183,6 +191,10 @@
 			isa = PBXGroup;
 			children = (
 				A5F45E30213E5A5F000FEDC0 /* JFContactCell.xib */,
+				6AB0C1EB21416E1500FC6D81 /* GroupHeaderView.swift */,
+				6AB0C1EC21416E1500FC6D81 /* GroupHeaderView.xib */,
+				6AB0C1EF21416EF600FC6D81 /* NoContactCell.swift */,
+				6AB0C1F021416EF600FC6D81 /* NoContactCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -464,7 +476,9 @@
 				6A1D7ED421391BC000C76FDD /* Cartfile in Resources */,
 				A5F45E5D213FC33F000FEDC0 /* SampleView.xib in Resources */,
 				6A1D7ED521391BC000C76FDD /* Cartfile.resolved in Resources */,
+				6AB0C1EE21416E1500FC6D81 /* GroupHeaderView.xib in Resources */,
 				A53B51772137ECF100DE670E /* Main.storyboard in Resources */,
+				6AB0C1F221416EF600FC6D81 /* NoContactCell.xib in Resources */,
 				A5F45E31213E5A5F000FEDC0 /* JFContactCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -530,6 +544,7 @@
 				A5F45E36213E8E46000FEDC0 /* SwipeHelper.swift in Sources */,
 				6A29BB38213EC3ED006CAC91 /* FavoriteHelper.swift in Sources */,
 				A53B51702137ECF100DE670E /* AppDelegate.swift in Sources */,
+				6AB0C1F121416EF600FC6D81 /* NoContactCell.swift in Sources */,
 				A5F45E65213FC7F9000FEDC0 /* UINavigationController.swift in Sources */,
 				A5F45E5C213FC33F000FEDC0 /* SampleView.swift in Sources */,
 				6A29BB30213EB34A006CAC91 /* GroupContactViewController.swift in Sources */,
@@ -537,6 +552,7 @@
 				A5F45E42213FBAFF000FEDC0 /* SettingsViewController.swift in Sources */,
 				A507A5892140B427001D0D59 /* ContactPickerCell.swift in Sources */,
 				A507A5782140B055001D0D59 /* ContactsPickerViewController.swift in Sources */,
+				6AB0C1ED21416E1500FC6D81 /* GroupHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -100,7 +100,6 @@ class MainContact: BaseViewController, UITableViewDelegate, UITableViewDataSourc
     
     override open func viewDidLoad() {
         super.viewDidLoad()
-        createGroups()
         self.title = GlobalConstants.Strings.contactsTitle
         registerContactCell()
         setUpSearchBar()
@@ -148,32 +147,7 @@ class MainContact: BaseViewController, UITableViewDelegate, UITableViewDataSourc
             }
         }
     }
-    
-    func createGroups() {
-//        createGroup(Group_Name: "Thanh Test Group") { (result) in
-//            switch result{
-//            case .Success(response: let bool):
-//                addContactToGroup(Group: group, Contact: contact) { (result) in
-//                    switch result{
-//                    case .Success(response: let bool):
-//                        if bool{
-//                            print("Contact Sucessfully Added To Group")
-//                        }
-//                        break
-//                    case .Error(error: let error):
-//                        print(error.localizedDescription)
-//                        break
-//                    }
-//                }
-//                break
-//            case .Error(error: let error):
-//                print(error.localizedDescription)
-//                break
-//            }
-//        }
-    }
-    
-    
+
     
     private func getContacts(_ completion:  @escaping ContactsHandler) {
         // TODO: Set up error domain
