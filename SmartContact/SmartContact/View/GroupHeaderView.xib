@@ -30,16 +30,14 @@
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Title) (Title) (Title) (Title)" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x4s-JC-SVc">
                     <rect key="frame" x="16" y="0.0" width="273" height="50"/>
-                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                    <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <accessibility key="accessibilityConfiguration" identifier="highlights_header"/>
+
             <constraints>
-                <constraint firstItem="wwi-dw-Scp" firstAttribute="centerY" secondItem="nUt-jB-2bG" secondAttribute="centerY" id="0wc-oz-x0r"/>
                 <constraint firstItem="wwi-dw-Scp" firstAttribute="centerY" secondItem="x4s-JC-SVc" secondAttribute="centerY" id="1Uo-Zy-3fv"/>
-                <constraint firstItem="x4s-JC-SVc" firstAttribute="centerY" secondItem="nUt-jB-2bG" secondAttribute="centerY" id="Be5-Ww-ZK9"/>
                 <constraint firstAttribute="bottom" secondItem="x4s-JC-SVc" secondAttribute="bottom" id="M9w-hr-29w"/>
                 <constraint firstItem="x4s-JC-SVc" firstAttribute="leading" secondItem="nUt-jB-2bG" secondAttribute="leading" constant="16" id="RQY-6l-ESC"/>
                 <constraint firstItem="x4s-JC-SVc" firstAttribute="top" secondItem="nUt-jB-2bG" secondAttribute="top" id="Y5j-Wv-uDO"/>
@@ -50,12 +48,6 @@
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="thx-wQ-HkE"/>
-            <variation key="default">
-                <mask key="constraints">
-                    <exclude reference="Be5-Ww-ZK9"/>
-                    <exclude reference="0wc-oz-x0r"/>
-                </mask>
-            </variation>
             <connections>
                 <outlet property="actionButton" destination="wwi-dw-Scp" id="QD1-ay-MMj"/>
                 <outlet property="titleLabel" destination="x4s-JC-SVc" id="uX6-sh-Nod"/>

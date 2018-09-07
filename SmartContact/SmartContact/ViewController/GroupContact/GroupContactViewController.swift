@@ -35,8 +35,6 @@ class GroupContactViewController: BaseViewController {
                 print("Error \(error)")
             }
         }
-        
-
     }
     
     func groupsSuccess(groups: [CNGroup]) {
@@ -51,9 +49,9 @@ class GroupContactViewController: BaseViewController {
                     }
                     self.contacts.updateValue(temps, forKey: group.name)
                 }
+                self.disPlayEmptyView(isShow: self.contacts.keys.count == 0)
+                self.tableView.reloadData()
             }
-            disPlayEmptyView(isShow: contacts.keys.count == 0)
-            tableView.reloadData()
         }
     }
     
@@ -118,8 +116,9 @@ extension GroupContactViewController: UITableViewDelegate, UITableViewDataSource
                 let allContacts = receivedContacts.compactMap({
                     return Contact(contact: $0)
                 })
+                let allValues = contactInSections + allContacts
                 self.addContactToGroups(group: self.groups[section], contacts: allContacts, {
-                    self.contacts.updateValue(allContacts, forKey: name)
+                    self.contacts.updateValue(allValues, forKey: name)
                     let indexSet = IndexSet.init(integer: section)
                     self.tableView.reloadSections(indexSet, with: .fade)
                     self.disPlayEmptyView(isShow: self.contacts.keys.count == 0)
