@@ -10,8 +10,8 @@
         <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Group" representedClassName="Group" syncable="YES" codeGenerationType="class">
-        <attribute name="cnContact" optional="YES" attributeType="Transformable" syncable="YES"/>
-        <attribute name="groupName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cnContact" optional="YES" attributeType="Transformable" customClassName="NSArray" syncable="YES"/>
+        <attribute name="groupName" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
         <element name="Favorite" positionX="-63" positionY="-18" width="128" height="150"/>

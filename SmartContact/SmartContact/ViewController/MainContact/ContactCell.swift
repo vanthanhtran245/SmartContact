@@ -19,8 +19,7 @@ class ContactCell: SwipeTableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-        selectionStyle = UITableViewCellSelectionStyle.none
+        selectionStyle = .none
         contactContainerView.layer.masksToBounds = true
         contactContainerView.layer.cornerRadius = contactContainerView.frame.size.width/2
     }
@@ -61,7 +60,7 @@ class ContactCell: SwipeTableViewCell {
     
     func updateSubtitleBasedonType(_ subtitleType: SubtitleCellValue , contact: Contact) {
         switch subtitleType {
-        case SubtitleCellValue.phoneNumber:
+        case .phoneNumber:
             let phoneNumberCount = contact.phoneNumbers.count
             if phoneNumberCount == 1  {
                 self.contactDetailTextLabel.text = "\(contact.phoneNumbers[0].phoneNumber)"
@@ -72,7 +71,7 @@ class ContactCell: SwipeTableViewCell {
             else {
                 self.contactDetailTextLabel.text = GlobalConstants.Strings.phoneNumberNotAvaialable
             }
-        case SubtitleCellValue.email:
+        case .email:
             let emailCount = contact.emails.count
             if emailCount == 1  {
                 self.contactDetailTextLabel.text = "\(contact.emails[0].email)"
@@ -83,9 +82,9 @@ class ContactCell: SwipeTableViewCell {
             else {
                 self.contactDetailTextLabel.text = GlobalConstants.Strings.emailNotAvaialable
             }
-        case SubtitleCellValue.birthday:
+        case .birthday:
             self.contactDetailTextLabel.text = contact.birthdayString
-        case SubtitleCellValue.organization:
+        case .organization:
             self.contactDetailTextLabel.text = contact.company
         }
     }

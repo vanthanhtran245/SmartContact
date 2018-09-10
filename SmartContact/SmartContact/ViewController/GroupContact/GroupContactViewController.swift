@@ -27,6 +27,16 @@ class GroupContactViewController: BaseViewController {
         super.viewWillAppear(animated)
         groupName.removeAll()
         contacts.removeAll()
+        let groups = ModelUtils.fetchObjects(entity: Group.self, context: ModelUtils.mainContext)
+        groupName = groups.map({ $0.groupName! })
+        groups.forEach { items in
+            guard let contacts = items.cnContact as? [CNContact] else { return }
+            let result = contacts.compactMap({
+                return Contact(contact: $0)
+            })
+            self.contacts.updateValue(result, forKey: items.groupName!)
+        }
+        
         fetchGroups { result in
             switch result {
             case .Success(response: let groups):
@@ -55,25 +65,12 @@ class GroupContactViewController: BaseViewController {
         }
     }
     
-   
-    
     private func registerContactCell() {
-        let podBundle = Bundle(for: self.classForCoder)
-        if let bundleURL = podBundle.url(forResource: GlobalConstants.Strings.bundleIdentifier, withExtension: "bundle") {
-            if let bundle = Bundle(url: bundleURL) {
-                let cellNib = UINib(nibName: GlobalConstants.Strings.cellNibIdentifier, bundle: bundle)
-                tableView.register(cellNib, forCellReuseIdentifier: "Cell")
-            }
-            else {
-                assertionFailure("Could not load bundle")
-            }
-        } else {
-            let cellNib = UINib(nibName: GlobalConstants.Strings.cellNibIdentifier, bundle: podBundle)
-            tableView.register(cellNib, forCellReuseIdentifier: "Cell")
-        }
+        let cellNib = UINib(nibName: GlobalConstants.Strings.cellNibIdentifier, bundle: .main)
+        tableView.register(cellNib, forCellReuseIdentifier: "Cell")
         let noContactIdentifier = String(describing: NoContactCell.self)
-        let cellNib = UINib(nibName: noContactIdentifier, bundle: .main)
-        tableView.register(cellNib, forCellReuseIdentifier: noContactIdentifier)
+        let noContactCell = UINib(nibName: noContactIdentifier, bundle: .main)
+        tableView.register(noContactCell, forCellReuseIdentifier: noContactIdentifier)
         let identifier = String(describing: GroupHeaderView.self)
         tableView.register(UINib(nibName: identifier, bundle: .main), forHeaderFooterViewReuseIdentifier: identifier)
     }

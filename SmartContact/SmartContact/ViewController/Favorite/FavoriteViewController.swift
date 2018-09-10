@@ -39,6 +39,8 @@ extension FavoriteViewController {
         super.viewWillAppear(animated)
         let result = FavoriteHelper.shared.favoriteContacts
         let cnContact = result.map({ $0.cnContact })
+        let
+        
         contacts = cnContact.compactMap({ item in
             guard let ctmutable = item as? CNMutableContact,
                 let ct = ctmutable.copy() as? CNContact else { return nil }

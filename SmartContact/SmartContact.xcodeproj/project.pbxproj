@@ -10,6 +10,7 @@
 		6A1D7ED421391BC000C76FDD /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 6A1D7ED221391BC000C76FDD /* Cartfile */; };
 		6A1D7ED521391BC000C76FDD /* Cartfile.resolved in Resources */ = {isa = PBXBuildFile; fileRef = 6A1D7ED321391BC000C76FDD /* Cartfile.resolved */; };
 		6A1D7EDB21391DB200C76FDD /* SunflowerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A1D7EDA21391DB200C76FDD /* SunflowerSDK.framework */; };
+		6A2309CE214427B6009DECDE /* GroupHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2309CD214427B6009DECDE /* GroupHelper.swift */; };
 		6A29BB2D213EB315006CAC91 /* SwiftyContacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A29BB2C213EB314006CAC91 /* SwiftyContacts.framework */; };
 		6A29BB30213EB34A006CAC91 /* GroupContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A29BB2F213EB34A006CAC91 /* GroupContactViewController.swift */; };
 		6A29BB33213EBA8A006CAC91 /* SmartContact.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6A29BB31213EBA8A006CAC91 /* SmartContact.xcdatamodeld */; };
@@ -86,6 +87,7 @@
 		6A1D7ED221391BC000C76FDD /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		6A1D7ED321391BC000C76FDD /* Cartfile.resolved */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile.resolved; sourceTree = "<group>"; };
 		6A1D7EDA21391DB200C76FDD /* SunflowerSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SunflowerSDK.framework; path = Carthage/Build/iOS/SunflowerSDK.framework; sourceTree = "<group>"; };
+		6A2309CD214427B6009DECDE /* GroupHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupHelper.swift; sourceTree = "<group>"; };
 		6A29BB2C213EB314006CAC91 /* SwiftyContacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyContacts.framework; path = Carthage/Build/iOS/SwiftyContacts.framework; sourceTree = "<group>"; };
 		6A29BB2F213EB34A006CAC91 /* GroupContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupContactViewController.swift; sourceTree = "<group>"; };
 		6A29BB32213EBA8A006CAC91 /* SmartContact.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SmartContact.xcdatamodel; sourceTree = "<group>"; };
@@ -321,6 +323,7 @@
 				A507A5702140B055001D0D59 /* ContactPicker */,
 				A5F45E35213E8E46000FEDC0 /* SwipeHelper.swift */,
 				6A29BB37213EC3ED006CAC91 /* FavoriteHelper.swift */,
+				6A2309CD214427B6009DECDE /* GroupHelper.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -539,6 +542,7 @@
 				A50163B0214207A0007C9AC7 /* NoContactCell.swift in Sources */,
 				6A8EC11921398FF000C08E23 /* ContactEntry.swift in Sources */,
 				A5F45E2E213E5A3E000FEDC0 /* Contact.swift in Sources */,
+				6A2309CE214427B6009DECDE /* GroupHelper.swift in Sources */,
 				A5F45E2F213E5A3E000FEDC0 /* Extensions.swift in Sources */,
 				A507A5792140B055001D0D59 /* Contacts.swift in Sources */,
 				A507A5872140B26E001D0D59 /* UIView+Extensions.swift in Sources */,
