@@ -36,33 +36,8 @@ class GroupContactViewController: BaseViewController {
             })
             self.contacts.updateValue(result, forKey: items.groupName!)
         }
-        
-        fetchGroups { result in
-            switch result {
-            case .Success(response: let groups):
-                self.groupsSuccess(groups: groups)
-            case .Error(error: let error):
-                print("Error \(error)")
-            }
-        }
-    }
-    
-    func groupsSuccess(groups: [CNGroup]) {
-        self.groups = groups
-        groupName = groups.map({ $0.name })
-        groups.forEach { group in
-            fetchContactsInGorup(Group: group) { (result) in
-                if case .Success(let contactsResult) = result {
-                    var temps:[Contact] = []
-                    contactsResult.forEach {
-                        temps.append(Contact(contact: $0))
-                    }
-                    self.contacts.updateValue(temps, forKey: group.name)
-                }
-                self.disPlayEmptyView(isShow: self.contacts.keys.count == 0)
-                self.tableView.reloadData()
-            }
-        }
+        disPlayEmptyView(isShow: groupName.count == 0)
+        tableView.reloadData()
     }
     
     private func registerContactCell() {
@@ -73,6 +48,21 @@ class GroupContactViewController: BaseViewController {
         tableView.register(noContactCell, forCellReuseIdentifier: noContactIdentifier)
         let identifier = String(describing: GroupHeaderView.self)
         tableView.register(UINib(nibName: identifier, bundle: .main), forHeaderFooterViewReuseIdentifier: identifier)
+    }
+    
+    @IBAction func addNewGroup(_ sender: Any) {
+        let alert = UIAlertController(title: "OK", message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        let action = UIAlertAction(title: "OK", style: .default, handler: { action in
+            guard let groupName = alert.textFields?.first?.text?.trimmed else { return }
+            let isExist = GroupHelper.shared.isExistGroup(groupName: groupName)
+            
+        })
+        alert.addAction(action)
+        alert.addTextField { tf in
+            tf.placeholder = "Group name"
+        }
+        present(alert, animated: true, completion: nil)
     }
 }
 

@@ -42,7 +42,8 @@ class GroupHelper {
             if isContanstContactInGroup(groupName: group.groupName!, contact: $0) {
                 //Remove
             } else {
-                group.cnContact?.adding($0)
+                guard var contacts = group.cnContact as? [CNContact] else { return }
+                contacts.append($0)
                 createOrUpdateGroup(group: group)
             }
         }

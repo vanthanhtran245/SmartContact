@@ -33,7 +33,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Group" id="RiN-VX-Pg0"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Group" id="RiN-VX-Pg0">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Ctk-8A-T2w">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="addNewGroup:" destination="8rJ-Kc-sve" id="FX2-xY-tGb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="6Fw-w7-cV0" id="wnS-OG-9P4"/>
                     </connections>
